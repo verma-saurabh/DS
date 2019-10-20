@@ -16,11 +16,6 @@ public class FIndAllTheSubSets {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         dfs(res, nums, new ArrayList<Integer>(), 0);
-
-        for (List l : res) {
-            System.out.println(l);
-        }
-
         return null;
     }
 
@@ -31,12 +26,15 @@ public class FIndAllTheSubSets {
         res.add(new ArrayList<Integer>(l));
 
         for (int i = start; i < nums.length; i++) {
+            //this is if you dont want duplicate subsets
+
+            /*if (i != start && nums[i] == nums[i - 1]) {
+                continue;
+            }*/
             l.add(nums[i]);
             dfs(res, nums, l, i + 1);
             l.remove(l.size() - 1);
         }
-
-
     }
 }
 
