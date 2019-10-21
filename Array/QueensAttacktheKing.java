@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*1222. Queens That Can Attack the King*/
 public class QueensAttacktheKing {
 
     public List<List<Integer>> queensAttacktheKing(int[][] queens, int[] king) {
