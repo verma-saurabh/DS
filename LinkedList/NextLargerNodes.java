@@ -5,6 +5,17 @@ import java.util.Stack;
 public class NextLargerNodes {
     int[] res;
 
+    public static void main(String[] args) {
+        ListNode list = new ListNode(1);
+        ListNode head = list;
+        list.next = new ListNode(2);
+        list.next.next = new ListNode(3);
+        list.next.next.next = new ListNode(4);
+
+        int[] ans = nextLargerNodes_1(head);
+        System.out.println(ans);
+    }
+
     public int[] nextLargerNodes(ListNode head) {
 
         recurssion(head, 0, new Stack<Integer>());
@@ -12,7 +23,7 @@ public class NextLargerNodes {
 
     }
 
-    public int[] nextLargerNodes_1(ListNode head) {
+    public static int[] nextLargerNodes_1(ListNode head) {
         if (head == null) {
             return new int[0];
         }
@@ -39,7 +50,7 @@ public class NextLargerNodes {
         return res;
     }
 
-    private ListNode reverse(ListNode head) {
+    private static ListNode reverse(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -59,7 +70,7 @@ public class NextLargerNodes {
         return cur;
     }
 
-    private int getLength(ListNode head) {
+    private static int getLength(ListNode head) {
         int res = 0;
         while (head != null) {
             head = head.next;
