@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.*;
+
 /*
  * 92. Reverse Linked List II
  * */
@@ -29,8 +31,35 @@ public class ReverseLinkedListII {
         // Connect the reversed part with the original list
         prevTail.next.next = curr;
         prevTail.next = prev;
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(0);
+        set.first();
 
+        TreeMap<Integer, List<Integer>> map= new TreeMap<>();
+        if (map.containsKey(1)) {
+            map.get(1);
+            map.firstEntry();
+        }
         return dummy.next;
+    }
+
+    static int Solve(int N, int[] A){
+        TreeMap<Integer, List<Integer>> map= new TreeMap<>();
+
+        for(int a:A){
+            int diff= Math.abs(a);
+            if(map.containsKey(diff)){
+                List list= new ArrayList<Integer>();
+                list= map.get(a);
+                map.put(diff,list);
+            }
+            else{
+                List list= new ArrayList<Integer>();
+                list.add(a);
+                map.put(diff,list);
+            }
+        }
+        return 1;
     }
 
 }
