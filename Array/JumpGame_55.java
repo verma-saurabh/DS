@@ -3,7 +3,7 @@ package Array;
 public class JumpGame_55 {
     public static void main(String[] args) {
         JumpGame_55 obj = new JumpGame_55();
-        int[] nums = {3, 2, 1, 0, 4};
+        int[] nums = {2, 3, 1, 1, 4};
         System.out.println(obj.canJump(nums));
     }
 
