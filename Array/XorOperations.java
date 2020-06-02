@@ -1,3 +1,4 @@
+/*
 package Array;
 
 import javafx.util.Pair;
@@ -44,12 +45,15 @@ public class XorOperations {
                 ans=xor[value-1]-xor[key-2];
             }
 
-            /*for (int j = pair.get(i).getKey(); j <= pair.gevt(i).getValue(); j++) {
+            */
+/*for (int j = pair.get(i).getKey(); j <= pair.gevt(i).getValue(); j++) {
                 ans += xor[j - 1];
-            }*/
+            }*//*
+
 
             System.out.println(ans);
 
         }
     }
 }
+*/
