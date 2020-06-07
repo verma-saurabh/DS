@@ -28,4 +28,39 @@ public class CoinChange {
         return dp[amount - 1];
 
     }
+
+    /*
+    322. Coin Change
+     */
+    public int coinChange(int[] coins, int amount) {
+        int dp[] = new int[amount+1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+
+
+        for (int i = 0; i <=amount; i++) {
+            if (dp[i] == Integer.MAX_VALUE) {
+                continue;
+            }
+
+            for (int coin : coins) {
+                if(i<=amount-coin){ //handle case when coin is Integer.MAX_VALUE
+                    dp[i+coin] = Math.min(dp[i]+1, dp[i+coin]);
+                }
+            }
+
+        }
+
+
+        for (int i : dp) {
+            System.out.println(i);
+        }
+
+        if(dp[amount]==Integer.MAX_VALUE){
+            return -1;
+        }
+
+        return dp[amount];
+
+    }
 }
