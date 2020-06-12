@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 public class CountingSort {
     public static void main(String[] args) {
-        int[] arr = {1, 4, 1, 2, 7, 5, 2};
+        int[] arr = {2,0,2,1,1,0};
         CountingSort obj = new CountingSort();
         obj.countingSort(arr);
         arr = new int[]{-10, -5, -3, -1, 0, 5, 8, 10};
