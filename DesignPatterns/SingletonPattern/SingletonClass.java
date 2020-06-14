@@ -2,24 +2,18 @@ package DesignPatterns.SingletonPattern;
 
 public class SingletonClass {
     private static SingletonClass instance;
-    private static boolean isInitialized = false;
+    private static Object mutex = new Object();
 
     private SingletonClass() {
 
     }
 
-    private void init() {
-
-    }
-
     public static synchronized SingletonClass getInstance() {
-        if (isInitialized) {
-            return instance;
-        } else {
-            instance = new SingletonClass();
-            instance.init();
-            isInitialized = true;
-            return instance;
+        if (instance == null) {
+            synchronized (mutex) {
+                if (instance == null) instance = new SingletonClass();
+            }
         }
+        return instance;
     }
 }
