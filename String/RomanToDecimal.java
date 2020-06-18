@@ -1,11 +1,15 @@
 package String;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.HashMap;
 
 class RomanChars {
-final HashMap<Character, Integer> map;
+    final HashMap<Character, Integer> map;
 
-        RomanChars() {
+    RomanChars() {
         map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
@@ -15,21 +19,23 @@ final HashMap<Character, Integer> map;
         map.put('D', 500);
         map.put('M', 1000);
 
-        }
+    }
 
-public HashMap<Character, Integer> getMap() {
+    public HashMap<Character, Integer> getMap() {
         return map;
-        }
-        }
+    }
+}
 
 public class RomanToDecimal {
     public static HashMap<Character, Integer> map = new RomanChars().getMap();
 
+    @Test
     public static void main(String[] args) {
         String number1 = "DCCVII";
         String number2 = "DCCVIIH";
-        System.out.println(RomanToDecimal.convertToDecimal(number1));
-        System.out.println(RomanToDecimal.convertToDecimal(number2));
+
+        assertTrue(RomanToDecimal.convertToDecimal(number1) == 707, "valid roman number");
+        assertTrue(RomanToDecimal.convertToDecimal(number2) == 0, "invalid roman number");
 
     }
 
@@ -39,10 +45,10 @@ public class RomanToDecimal {
         for (int i = 0; i < length; i++) {
 
             Integer s1 = map.get(number.charAt(i));
-            if(s1==null) return 0;
+            if (s1 == null) return 0;
             if (i + 1 < length) {
                 Integer s2 = map.get(number.charAt(i + 1));
-                if(s2==null) return 0;
+                if (s2 == null) return 0;
                 if (s1 >= s2) {
                     decimalNumber += s1;
                 } else {
