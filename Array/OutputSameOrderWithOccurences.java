@@ -1,5 +1,6 @@
 package Array;
 
+import java.io.FileInputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,6 +33,32 @@ public class OutputSameOrderWithOccurences {
         //obj.computeUsingMap(input);
         //obj.computeUsingSet(input);
         obj.computeUsingStream(input);
+
+        String s1 = "abc";
+        String s2 = s1;
+        s1 += "d";
+        System.out.println(s1 + " " + s2 + " " + (s1 == s2));
+
+        StringBuffer sb1 = new StringBuffer("abc");
+        StringBuffer sb2 = sb1;
+        sb1.append("d");
+        System.out.println(sb1 + " " + sb2 + " " + (sb1 == sb2));
+        new OutputSameOrderWithOccurences();
+        int x = 3 & 5;
+        int y = 3 | 5;
+        System.out.println(x + " " + y);
+
+
+        PriorityQueue toDo = new PriorityQueue();
+        toDo.add("dishes");
+        toDo.add("laundry");
+        toDo.add("bills");
+        toDo.offer("bills");
+        System.out.print(toDo.size() + " " + toDo.poll());
+        System.out.print(" " + toDo.peek() + " " + toDo.poll());
+        System.out.println(" " + toDo.poll() + " " + toDo.poll());
+
+
     }
 
     public void computeUsingMap(String[] input) {
@@ -64,5 +91,23 @@ public class OutputSameOrderWithOccurences {
         Arrays.stream(arr).collect(Collectors.groupingBy(s -> s))
                 .forEach((k, v) -> System.out.println(k + "   -->   " + v.size()));
 
+    }
+
+    class Inner {
+        void test() {
+            if (OutputSameOrderWithOccurences.this.flag) {
+                sample();
+            }
+        }
+    }
+
+    private boolean flag = true;
+
+    public void sample() {
+        System.out.println("Sample");
+    }
+
+    public OutputSameOrderWithOccurences() {
+        (new Inner()).test();
     }
 }
