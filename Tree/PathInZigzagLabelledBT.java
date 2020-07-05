@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class PathInZigzagLabelledBT {
     public static void main(String[] args) {
-        List<Integer> list = pathInZigZagTree(26);
+        List<Integer> list = pathInZigZagTree(355);
 
         for (int i : list) {
             System.out.println(i);
